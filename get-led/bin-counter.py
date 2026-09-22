@@ -17,10 +17,12 @@ while True:
         num+=1
         if num>255:
             num=0
+        print(num,dec2bin(num))    
         time.sleep(sleeptime)
     if GPIO.input(Down):
         num-=1
         if num<0:
             num=0
+        print(num,dec2bin(num))   
         time.sleep(sleeptime)
     GPIO.output(leds,dec2bin(num))
