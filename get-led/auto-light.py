@@ -9,3 +9,4 @@ GPIO.setup(light,GPIO.IN)
 while True:
     state=GPIO.input(light)
     GPIO.output(led,not state)
+    time.sleep(0.05)
