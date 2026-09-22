@@ -14,5 +14,3 @@ while True:
         GPIO.output(led,1)
         time.sleep(t)
         GPIO.output(led,0)
-
-
