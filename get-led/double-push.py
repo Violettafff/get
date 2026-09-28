@@ -3,7 +3,7 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-leds = [16, 12, 25, 17, 27, 23, 22, 24]   # MSB первый, bit6 = GPIO12
+leds = [16, 12, 25, 17, 27, 23, 22, 24]   
 GPIO.setup(leds, GPIO.OUT)
 GPIO.output(leds, 0)
 
@@ -24,7 +24,6 @@ while True:
     down_pressed = GPIO.input(Down)
 
     if up_pressed and down_pressed:
-        # одновременное нажатие — устанавливаем максимум
         num = 255
         print(num, dec2bin(num))
         time.sleep(sleep_time)
