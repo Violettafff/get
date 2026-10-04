@@ -1,1 +1,23 @@
-Вам бесплатный билет на 1 помощь
+#include<iostream>
+#include<string>
+using namespace std;
+struct Book {
+	string title;
+	string author;
+	int year;
+	int pages;
+};
+
+int main() {
+	Book b;
+	getline(cin,b.title);
+	getline(cin,b.author);
+	cin >> b.year;
+	cin >> b.pages;		
+	cout << "name: " << b.title << "\n";
+	cout << "author: " << b.author << "\n";
+	cout << "year: " << b.year << "\n";
+	cout << "pages: " << b.pages << "\n";
+	return 0;
+
+}
