@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 dac = [16, 20, 21, 25, 26, 17, 27, 22]
 GPIO.setup(dac, GPIO.OUT)
-dynamic_range=3.290
+dynamic_range=3.160
 def voltage_to_number(voltage):
     if not (0.0 <= voltage <= dynamic_range):
         print(f"Напряжение выходит за динамический диапазон ЦАП (0.00 - {dynamic_range:.2f} В)")
