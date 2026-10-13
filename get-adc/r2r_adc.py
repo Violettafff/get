@@ -1,7 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-
-
 class R2R_ADC:
     def __init__(self, dynamic_range, compare_time=0.01, verbose=False):
         self.dynamic_range = dynamic_range
@@ -43,36 +41,13 @@ class R2R_ADC:
 
         return voltage
 
-    def successive_approximation_adc(self):
-        number = 0
-
-        for bit in range(len(self.bits_gpio) - 1, -1, -1):
-            number |= 1 << bit             
-            self.number_to_dac(number)
-            time.sleep(self.compare_time)
-
-            if GPIO.input(self.comp_gpio) == 1:
-                number &= ~(1 << bit)    
-
-        return number
-
-    def get_sar_voltage(self):
-        number = self.successive_approximation_adc()
-        voltage = number / (2 ** len(self.bits_gpio) - 1) * self.dynamic_range
-
-        if self.verbose:
-            print(f"Число: {number}, напряжение: {voltage:.3f} В")
-
-        return voltage
-
-
 if __name__ == "__main__":
     adc = None
     try:
-        adc = R2R_ADC(3.16)
+        adc = R2R_ADC(3.28)
 
         while True:
-            voltage = adc.get_sc_voltage()
+            voltage = adc.get_get_voltage()
             print(f"Напряжение: {voltage:.2f} В")
 
     finally:
