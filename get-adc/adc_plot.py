@@ -18,8 +18,7 @@ def plot_voltage_vs_time(time, voltage, max_voltage, filename=None):
         plt.savefig(filename, dpi=150)
 
     plt.show()
-
-
+    
 def plot_sampling_period_hist(time, filename=None):
     sampling_periods = []
 
@@ -41,3 +40,6 @@ def plot_sampling_period_hist(time, filename=None):
         plt.savefig(filename, dpi=150)
 
     plt.show()
+    
+
+

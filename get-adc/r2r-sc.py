@@ -3,7 +3,7 @@ import time
 import r2r_adc
 import adc_plot
 
-dynamic_range = 3.16
+dynamic_range = 3.28
 
 adc = r2r_adc.R2R_ADC(dynamic_range, compare_time=0.0001)
 
@@ -20,6 +20,7 @@ try:
 
     adc_plot.plot_voltage_vs_time(time_values, voltage_values, dynamic_range, "sc-plot.png")
     adc_plot.plot_sampling_period_hist(time_values, "sc-hist.png")
+    
 
 finally:
     adc.deinit()
